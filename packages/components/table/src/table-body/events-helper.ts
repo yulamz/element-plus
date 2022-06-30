@@ -93,7 +93,7 @@ function useEvents<T>(props: Partial<TableBodyProps<T>>) {
       (Number.parseInt(getStyle(cellChild, 'paddingLeft'), 10) || 0) +
       (Number.parseInt(getStyle(cellChild, 'paddingRight'), 10) || 0)
     if (
-      rangeWidth + padding > cellChild.offsetWidth ||
+      Math.round(rangeWidth + padding) > cellChild.offsetWidth ||
       cellChild.scrollWidth > cellChild.offsetWidth
     ) {
       createTablePopper(
